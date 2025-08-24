@@ -42,9 +42,6 @@ public interface IMareHub
     Task Client_GposeLobbyPushPoseData(UserData userData, PoseData poseData);
     Task Client_GposeLobbyPushWorldData(UserData userData, WorldData worldData);
 
-    Task Client_UpdateSupporterList(SupporterDto supporterDto);
-    Task Client_GroupChat(GroupChatDto groupChatDto);
-
     Task<ConnectionDto> GetConnectionDto();
 
     Task GroupBanUser(GroupPairDto dto, string reason);
@@ -72,7 +69,6 @@ public interface IMareHub
     Task<UserProfileDto> UserGetProfile(UserDto dto);
     Task UserPushData(UserCharaDataMessageDto dto);
     Task UserRemovePair(UserDto userDto);
-    Task UserReportProfile(UserProfileReportDto userDto);
     Task UserSetProfile(UserProfileDto userDescription);
     Task UserUpdateDefaultPermissions(DefaultPermissionsDto defaultPermissionsDto);
     Task SetBulkPermissions(BulkPermissionsDto dto);
@@ -84,7 +80,6 @@ public interface IMareHub
     Task<CharaDataDownloadDto?> CharaDataDownload(string id);
     Task<List<CharaDataFullDto>> CharaDataGetOwn();
     Task<List<CharaDataMetaInfoDto>> CharaDataGetShared();
-    Task Client_UserApplyMoodlesByStatus(ApplyMoodlesByStatusDto dto);
     Task<CharaDataFullDto?> CharaDataAttemptRestore(string id);
 
     Task<string> GposeLobbyCreate();
@@ -93,12 +88,4 @@ public interface IMareHub
     Task GposeLobbyPushCharacterData(CharaDataDownloadDto charaDownloadDto);
     Task GposeLobbyPushPoseData(PoseData poseData);
     Task GposeLobbyPushWorldData(WorldData worldData);
-
-    Task GroupChatServer(GroupChatDto groupChatDto);
-
-    Task Client_MoodlesShare(MoodlesDto moodlesDto);
-    Task MoodlesShare(MoodlesDto moodlesDto);
-
-    Task<bool> UpdatePFinder(PFinderDto pFinderDto);
-    Task<List<PFinderDto>> RefreshPFinderList(UserDto userDto);
 }
